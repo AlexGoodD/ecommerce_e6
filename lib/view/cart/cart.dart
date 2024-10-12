@@ -16,7 +16,7 @@ class _CartState extends State<Cart> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 225, 251, 213),
         title: const AppNameWidget(),
         actions: [
           Padding(

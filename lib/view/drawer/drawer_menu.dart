@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:super_store_e_commerce_flutter/imports.dart';
 
 class DrawerMenu extends StatefulWidget {
   const DrawerMenu({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _DrawerMenuState createState() => _DrawerMenuState();
 }
 
@@ -23,10 +23,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: Colors.white,
-                          backgroundImage: NetworkImage(RawString.appLogoURL),
+                        const Text(
+                          '🐻', // Emoji de oso
+                          style: TextStyle(
+                            fontSize: 40, // Tamaño del emoji
+                          ),
                         ),
                         const SizedBox(width: 10),
                         Column(
@@ -41,6 +42,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
                     ),
                   ),
                   const SizedBox(height: 10.0),
+                  const Divider(
+                    color: Colors.grey, // Línea separadora tenue
+                    thickness: 0.5,
+                  ),
                   Expanded(
                     child: ListView(
                       children: [
@@ -49,41 +54,61 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             Navigator.push(context, MaterialPageRoute(builder: (_) => const Home()));
                           },
                           leading: const Icon(
-                            Icons.home,
+                            Icons.home_outlined, // Cambié el ícono a "outlined"
                             color: Colors.black,
-                            size: 20,
+                            size: 24,
                           ),
-                          title: const TextBuilder(text: "Home", fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.black),
+                          title: const TextBuilder(
+                              text: "Home",
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
                         ),
+                        const Divider(color: Colors.grey, thickness: 0.5),
                         ListTile(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) => const Cart()));
                           },
                           leading: const Icon(
-                            Icons.shopping_bag,
+                            Icons.shopping_bag_outlined, // Ícono "outlined"
                             color: Colors.black,
-                            size: 20,
+                            size: 24,
                           ),
-                          title: const TextBuilder(text: "Cart", fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.black),
+                          title: const TextBuilder(
+                              text: "Cart",
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
                         ),
+                        const Divider(color: Colors.grey, thickness: 0.5),
                         ListTile(
                           onTap: () {
                             UrlLaunch.launchInBrowser(urlString: RawString.gitHubRepo);
                           },
-                          leading: const Icon(Icons.source, color: Colors.black, size: 20),
-                          title: const TextBuilder(text: "Source code", fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.black),
+                          leading: const Icon(Icons.code_outlined, color: Colors.black, size: 24), // Ícono de código
+                          title: const TextBuilder(
+                              text: "Repo",
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
                         ),
+                        const Divider(color: Colors.grey, thickness: 0.5),
                         ListTile(
                           onTap: () {
                             UrlLaunch.makeEmail(email: RawString.gitHubRepo, body: 'Hello,', subject: 'Can we Talk?');
                           },
                           leading: const Icon(
-                            Icons.email,
+                            Icons.email_outlined, // Ícono "outlined"
                             color: Colors.black,
-                            size: 20,
+                            size: 24,
                           ),
-                          title: const TextBuilder(text: "Contact", fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.black),
+                          title: const TextBuilder(
+                              text: "Contact",
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
                         ),
+                        const Divider(color: Colors.grey, thickness: 0.5),
                         InkWell(
                           onTap: () {
                             Navigator.pop(context);
@@ -95,13 +120,18 @@ class _DrawerMenuState extends State<DrawerMenu> {
                           },
                           child: const ListTile(
                             leading: Icon(
-                              Icons.info,
+                              Icons.info_outline, // Ícono "outlined"
                               color: Colors.black,
-                              size: 20,
+                              size: 24,
                             ),
-                            title: TextBuilder(text: "About App", fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.black),
+                            title: TextBuilder(
+                                text: "About App",
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
                           ),
                         ),
+                        const Divider(color: Colors.grey, thickness: 0.5),
                       ],
                     ),
                   ),

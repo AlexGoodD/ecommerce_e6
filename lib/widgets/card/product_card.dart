@@ -11,7 +11,7 @@ class ProductCard extends StatelessWidget {
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.blue, width: 0.5),
+        border: Border.all(color: const Color.fromARGB(255, 102, 106, 110), width: 0.5),
         borderRadius: BorderRadius.circular(8),
       ),
       child: InkWell(
@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
                     child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: const Color.fromARGB(255, 18, 47, 12),
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: TextBuilder(
@@ -73,19 +73,19 @@ class ProductCard extends StatelessWidget {
                         Row(
                           children: [
                             const TextBuilder(
-                              text: '₹ ',
+                              text: '\$ ',
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 0, 13, 3),
                             ),
                             TextBuilder(
                               text: product.price!.round().toString(),
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                              color: const Color.fromARGB(255, 1, 11, 0),
                             ),
                           ],
                         ),
                         IconButton(
-                          splashColor: Colors.blue,
+                          splashColor: const Color.fromARGB(255, 59, 138, 47),
                           tooltip: 'Add to cart',
                           onPressed: () {
                             final ScaffoldMessengerState addToCartMsg = ScaffoldMessenger.of(context);
@@ -114,7 +114,7 @@ class ProductCard extends StatelessWidget {
                             // cart.addItem(product.id.toString(), product.title!, product.price, product.image!, product.category!);
                           },
                           icon: const Icon(Icons.add_shopping_cart_rounded),
-                          color: Colors.blue,
+                          color: const Color.fromARGB(255, 74, 157, 53),
                         ),
                       ],
                     ),

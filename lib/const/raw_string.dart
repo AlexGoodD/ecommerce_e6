@@ -1,9 +1,9 @@
 class RawString {
   RawString._();
-  static String appName = 'Super Store';
-  static String appDescription = 'Flutter E-commerce App using REST API.';
-  static String gitHubRepo = 'https://github.com/om-chauhan/Super-Store-Ecommerce-App-using-REST-Api-in-Flutter';
-  static String emailId = 'omi8655@gmail.com';
-  static String dummyEmail = 'superstore@gmail.com';
+  static String appName = 'Osos Shop';
+  static String appDescription = 'Flutter E-commerce App con REST API.';
+  static String gitHubRepo = 'https://github.com/maugalcst/ecommerce_e6.git';
+  static String emailId = 'maugal.cst@gmail.com';
+  static String dummyEmail = 'ososshop@gmail.com';
   static String appLogoURL = 'https://ui-avatars.com/api/?name=Super+Store';
 }

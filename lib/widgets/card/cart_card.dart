@@ -14,8 +14,8 @@ class CartCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.blue, width: 0.5),
+        color: const Color.fromARGB(255, 255, 255, 255),
+        border: Border.all(color: const Color.fromARGB(255, 109, 109, 109), width: 0.5),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -66,7 +66,7 @@ class CartCard extends StatelessWidget {
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 18, 47, 12),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: TextBuilder(
@@ -113,12 +113,12 @@ class CartCard extends StatelessWidget {
                             text: 'Total: ',
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
-                            color: Colors.blue,
+                            color: Color.fromARGB(255, 21, 53, 5),
                           ),
                           TextBuilder(
-                            text: " ₹${cart.price!.round()}",
+                            text: " \$${cart.price!.round()}",
                             fontWeight: FontWeight.w600,
-                            color: Colors.blue,
+                            color: const Color.fromARGB(255, 1, 7, 12),
                             fontSize: 18,
                           ),
                         ],
