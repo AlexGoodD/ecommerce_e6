@@ -1,4 +1,5 @@
 export 'dart:convert';
+export 'dart:isolate';
 export 'view/init_screen/splash.dart';
 export 'package:flutter/material.dart';
 export 'package:provider/provider.dart';
