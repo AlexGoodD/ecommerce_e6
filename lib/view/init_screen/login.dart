@@ -4,7 +4,6 @@ class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _LoginState createState() => _LoginState();
 }
 
@@ -19,7 +18,6 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    // total height and width of screen
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
@@ -30,33 +28,52 @@ class _LoginState extends State<Login> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const AppNameWidget(),
-              const SizedBox(height: 100),
-              const CustomTextField(labelText: 'Email', hintText: 'example@example.com', prefixIcon: Icons.email),
+              const SizedBox(height: 50),
+              const Align(
+                alignment: Alignment.center,
+                child: TextBuilder(
+                  text: 'Bienvenido de vuelta',
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimaryColor,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.center,
+                child: TextBuilder(
+                  text: 'Ingresa a tu cuenta por favor',
+                  fontSize: 15,
+                  color: AppColors.textSecondaryColor,
+                ),
+              ),
+              const SizedBox(height: 50),
+              const CustomTextField(labelText: 'Correo electrónico', hintText: 'example@example.com', prefixIcon: Icons.email),
               const SizedBox(height: 20.0),
-              const CustomTextField(labelText: 'Password', hintText: 'Password', prefixIcon: Icons.lock),
+              const CustomTextField(labelText: 'Contraseña', hintText: '123456', prefixIcon: Icons.lock),
+              const SizedBox(height: 15.0),
               Align(
                 alignment: Alignment.centerRight,
                 child: InkWell(
                   onTap: () {},
                   child: const TextBuilder(
-                    text: 'Forgot Password',
+                    text: 'Olvidé mi contraseña',
                     fontSize: 16,
-                    color: Colors.blue,
+                    color: AppColors.textSecondaryColor,
                   ),
                 ),
               ),
-              const SizedBox(height: 30.0),
+              const SizedBox(height: 15.0),
               Center(
                 child: MaterialButton(
                   height: 60,
-                  color: Colors.black,
+                  color: AppColors.buttonColor,
                   minWidth: size.width * 0.8,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const Home()), (route) => false);
                   },
                   child: const TextBuilder(
-                    text: 'Login',
+                    text: 'Iniciar sesión',
                     color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.normal,
@@ -68,16 +85,16 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const TextBuilder(
-                    text: "Don't have an account? ",
-                    color: Colors.black,
+                    text: "¿No tienes una cuenta? ",
+                    color: AppColors.textSecondaryColor,
                   ),
                   InkWell(
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (_) => const Register()));
                     },
                     child: const TextBuilder(
-                      text: 'Sign Up',
-                      color: Colors.black,
+                      text: 'Regístrate',
+                      color: AppColors.textPrimaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   )

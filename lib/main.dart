@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         title: RawString.appName,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: const Color.fromARGB(255, 158, 173, 152),
+          scaffoldBackgroundColor: AppColors.backgroundColor,
           useMaterial3: true,
         ),
         home: const Splash(),

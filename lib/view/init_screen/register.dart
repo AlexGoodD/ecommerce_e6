@@ -22,26 +22,44 @@ class _RegisterState extends State<Register> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const AppNameWidget(),
-              const SizedBox(height: 100),
-              const CustomTextField(labelText: 'Full Name', hintText: 'John Doe', prefixIcon: Icons.person),
+              const SizedBox(height: 50),
+              const Align(
+                alignment: Alignment.center,
+                child: TextBuilder(
+                  text: 'Registro',
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimaryColor,
+                ),
+              ),
+              const Align(
+                alignment: Alignment.center,
+                child: TextBuilder(
+                  text: 'Crea tu nueva cuenta',
+                  fontSize: 15,
+                  color: AppColors.textSecondaryColor,
+                ),
+              ),
+              const SizedBox(height: 40),
+              const CustomTextField(labelText: 'Nombre completo', hintText: 'John Doe', prefixIcon: Icons.person),
               const SizedBox(height: 20.0),
-              const CustomTextField(labelText: 'Email', hintText: 'example@example.com', prefixIcon: Icons.email),
+              const CustomTextField(labelText: 'Correo electrónico', hintText: 'example@example.com', prefixIcon: Icons.email),
               const SizedBox(height: 20.0),
-              const CustomTextField(labelText: 'Password', hintText: 'Password', prefixIcon: Icons.lock),
+              const CustomTextField(labelText: 'Contraseña', hintText: '123456', prefixIcon: Icons.lock),
               const SizedBox(height: 20.0),
-              const CustomTextField(labelText: 'Confirm Password', hintText: 'Confirm Password', prefixIcon: Icons.lock),
+              const CustomTextField(labelText: 'Confirmar contraseña', hintText: '123456', prefixIcon: Icons.lock),
               const SizedBox(height: 30.0),
               Center(
                 child: MaterialButton(
                   height: 60,
-                  color: Colors.black,
+                  color: AppColors.buttonColor,
                   minWidth: size.width * 0.8,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                   onPressed: () {
                     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const Login()), (route) => false);
                   },
                   child: const TextBuilder(
-                    text: 'Sign Up',
+                    text: 'Registrarme',
                     color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.normal,
@@ -53,7 +71,7 @@ class _RegisterState extends State<Register> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const TextBuilder(
-                    text: "Have have an account? ",
+                    text: "¿Tienes una cuenta? ",
                     color: Colors.black,
                   ),
                   InkWell(
@@ -61,8 +79,8 @@ class _RegisterState extends State<Register> {
                       Navigator.push(context, MaterialPageRoute(builder: (_) => const Login()));
                     },
                     child: const TextBuilder(
-                      text: 'Login',
-                      color: Colors.black,
+                      text: 'Inicia sesión',
+                      color: AppColors.textPrimaryColor,
                       fontWeight: FontWeight.bold,
                     ),
                   )

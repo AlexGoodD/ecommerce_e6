@@ -1,11 +1,9 @@
 import 'package:http/http.dart' as http;
-
 import 'package:super_store_e_commerce_flutter/imports.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
   @override
-  // ignore: library_private_types_in_public_api
   _HomeState createState() => _HomeState();
 }
 

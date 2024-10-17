@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:super_store_e_commerce_flutter/imports.dart';
 
 class DrawerMenu extends StatefulWidget {
@@ -59,7 +58,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             size: 24,
                           ),
                           title: const TextBuilder(
-                              text: "Home",
+                              text: "Inicio",
                               fontSize: 20.0,
                               fontWeight: FontWeight.w400,
                               color: Colors.black),
@@ -75,7 +74,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             size: 24,
                           ),
                           title: const TextBuilder(
-                              text: "Cart",
+                              text: "Carrito de compras",
                               fontSize: 20.0,
                               fontWeight: FontWeight.w400,
                               color: Colors.black),
@@ -87,7 +86,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                           },
                           leading: const Icon(Icons.code_outlined, color: Colors.black, size: 24), // Ícono de código
                           title: const TextBuilder(
-                              text: "Repo",
+                              text: "Repositorio",
                               fontSize: 20.0,
                               fontWeight: FontWeight.w400,
                               color: Colors.black),
@@ -103,7 +102,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             size: 24,
                           ),
                           title: const TextBuilder(
-                              text: "Contact",
+                              text: "Contáctanos",
                               fontSize: 20.0,
                               fontWeight: FontWeight.w400,
                               color: Colors.black),
@@ -125,11 +124,27 @@ class _DrawerMenuState extends State<DrawerMenu> {
                               size: 24,
                             ),
                             title: TextBuilder(
-                                text: "About App",
+                                text: "Acerca de la app",
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.black),
                           ),
+                        ),
+                        const Divider(color: Colors.grey, thickness: 0.5),
+                        ListTile(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => const Login()));
+                          },
+                          leading: const Icon(
+                            Icons.logout_outlined, // Cambié el ícono a "outlined"
+                            color: Colors.black,
+                            size: 24,
+                          ),
+                          title: const TextBuilder(
+                              text: "Cerrar sesión",
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black),
                         ),
                         const Divider(color: Colors.grey, thickness: 0.5),
                       ],

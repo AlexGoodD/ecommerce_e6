@@ -45,7 +45,7 @@ class Cart extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: FutureBuilder<int>(
-          future: cart.totalPrice(),  // Llama al cálculo en el isolate.
+          future: cart.totalPrice(), // Llama al cálculo en el isolate.
           builder: (context, snapshot) {
             String buttonText;
             bool isButtonEnabled;
@@ -69,7 +69,9 @@ class Cart extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               onPressed: isButtonEnabled
-                  ? () {
+                  ? () async {
+                int total = await cart.totalPrice(); // Resuelve el Future
+                await sendEmail(cart, total);
                 final buyNow = ScaffoldMessenger.of(context);
                 buyNow.showSnackBar(
                   SnackBar(
@@ -78,7 +80,7 @@ class Cart extends StatelessWidget {
                     ),
                     backgroundColor: Colors.black,
                     behavior: SnackBarBehavior.floating,
-                    content: const Text('Thank you for shopping with us'),
+                    content: const Text('Gracias por comprar con nosotros'),
                   ),
                 );
               }
@@ -101,5 +103,25 @@ class Cart extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  // Función para enviar correo
+  Future<void> sendEmail(CartProvider cart, int total) async {
+    String productDetails = cart.items.map((item) {
+      return 'Producto: ${item.title}, Cantidad: ${item.quantity}, Precio: \$${item.price}';
+    }).join('\n');
+
+    final Email email = Email(
+      body: 'Detalles de la compra:\n\n$productDetails\n\nTotal: \$${total}',
+      subject: 'Compra realizada - Productos Comprados',
+      recipients: ['alejandrochavarb@gmail.com'],
+      isHTML: false,
+    );
+
+    try {
+      await FlutterEmailSender.send(email);
+    } catch (error) {
+      print('Error al enviar el correo: $error');
+    }
   }
 }

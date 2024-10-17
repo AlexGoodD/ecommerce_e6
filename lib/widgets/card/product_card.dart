@@ -8,11 +8,11 @@ class ProductCard extends StatelessWidget {
     Size size = MediaQuery.sizeOf(context);
     final cart = Provider.of<CartProvider>(context);
     return Container(
-      padding: const EdgeInsets.all(2),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: const Color.fromARGB(255, 102, 106, 110), width: 0.5),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: InkWell(
         onTap: () => openImage(context, size),

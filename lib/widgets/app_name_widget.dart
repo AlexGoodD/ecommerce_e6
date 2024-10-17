@@ -8,8 +8,8 @@ class AppNameWidget extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TextBuilder(text: 'OSOS ', color: AppColors.kBlue, fontSize: 30, fontWeight: FontWeight.w700),
-        TextBuilder(text: 'SHOP', color: AppColors.kGreen, fontSize: 30),
+        TextBuilder(text: 'Osos ', color: AppColors.kBlue, fontSize: 30, fontWeight: FontWeight.w700),
+        TextBuilder(text: 'Shop', color: AppColors.kGreen, fontSize: 30),
       ],
     );
   }
