@@ -47,9 +47,19 @@ class _LoginState extends State<Login> {
                 ),
               ),
               const SizedBox(height: 50),
-              const CustomTextField(labelText: 'Correo electrónico', hintText: 'example@example.com', prefixIcon: Icons.email),
+              CustomTextField(
+                labelText: 'Correo electrónico',
+                hintText: 'example@example.com',
+                prefixIcon: Icons.email,
+                controller: _emailController,
+              ),
               const SizedBox(height: 20.0),
-              const CustomTextField(labelText: 'Contraseña', hintText: '123456', prefixIcon: Icons.lock),
+              CustomTextField(
+                labelText: 'Contraseña',
+                hintText: '123456',
+                prefixIcon: Icons.lock,
+                controller: _passwordController,
+              ),
               const SizedBox(height: 15.0),
               Align(
                 alignment: Alignment.centerRight,
@@ -70,7 +80,15 @@ class _LoginState extends State<Login> {
                   minWidth: size.width * 0.8,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                   onPressed: () {
-                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const Home()), (route) => false);
+                    // Obtener el email del controlador
+                    String email = _emailController.text;
+
+                    // Navegar a Home y pasar el email como argumento
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (_) => Home(email: email)),
+                          (route) => false,
+                    );
                   },
                   child: const TextBuilder(
                     text: 'Iniciar sesión',

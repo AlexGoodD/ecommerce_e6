@@ -36,7 +36,7 @@ class CartCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextBuilder(
-                        text: '${cart.title} X ${cart.quantity}',
+                        text: '${cart.title}',
                         color: Colors.black,
                         fontWeight: FontWeight.w400,
                         fontSize: 16,

@@ -50,7 +50,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       children: [
                         ListTile(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const Home()));
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Home(email: '',)));
                           },
                           leading: const Icon(
                             Icons.home_outlined, // Cambié el ícono a "outlined"
@@ -66,7 +66,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         const Divider(color: Colors.grey, thickness: 0.5),
                         ListTile(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const Cart()));
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Cart(userEmail: '',)));
                           },
                           leading: const Icon(
                             Icons.shopping_bag_outlined, // Ícono "outlined"
@@ -94,7 +94,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         const Divider(color: Colors.grey, thickness: 0.5),
                         ListTile(
                           onTap: () {
-                            UrlLaunch.makeEmail(email: RawString.gitHubRepo, body: 'Hello,', subject: 'Can we Talk?');
+                            UrlLaunch.makeEmail(email: RawString.emailId, body: 'Hola?,', subject: 'Podríamos hablar?');
                           },
                           leading: const Icon(
                             Icons.email_outlined, // Ícono "outlined"

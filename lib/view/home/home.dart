@@ -2,7 +2,10 @@ import 'package:http/http.dart' as http;
 import 'package:super_store_e_commerce_flutter/imports.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  final String email; // Agregar este campo para almacenar el email
+
+  const Home({Key? key, required this.email}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -53,14 +56,14 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) => const Cart()));
+              Navigator.push(context, MaterialPageRoute(builder: (_) => Cart(userEmail: widget.email)));
             },
             icon: Stack(
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: cart.itemCount != 0 ? 8 : 0, right: cart.itemCount != 0 ? 8 : 0),
                   child: const Icon(
-                    Icons.shopping_cart,
+                    Icons.shopping_cart_outlined,
                     color: Colors.black,
                     size: 30,
                   ),
